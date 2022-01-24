@@ -1,0 +1,7 @@
+#!/bin/bash
+# Variables
+PACKAGES="maim xclip vim neovim"
+
+# Execution
+yay
+yay -S $PACKAGES
