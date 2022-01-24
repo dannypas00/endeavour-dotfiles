@@ -18,7 +18,7 @@
 ###################
 # global settings #
 ###################
-set $terminal xfce4-terminal
+set $terminal kitty
 set $editor nvim
 
 # Windows key
@@ -175,7 +175,7 @@ bindsym $mod+r mode "resize"
 ######################################
 
 # start a terminah
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec $terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -285,9 +285,8 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+p exec /usr/local/bin/switch-audio-port
 
 ## App shortcuts
-bindsym $mod+Shift+Ente exec /usr/bin/firefox
+bindsym $mod+Shift+Return exec /usr/bin/firefox
 bindsym $mod+e exec /usr/bin/thunar
-# bindsym Print exec "scrot ~/%Y-%m-%d-%T-screenshot.png"
 
 # Power Profiles menu switcher (rofi)
 bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
@@ -319,14 +318,14 @@ set $ws10 "10"
 #workspace $ws5 output HDMI-0
 
 # bind program to workspace and focus to them on startup:
-assign [class="Xfce4-terminal"] $ws1
+assign [class="kitty"] $ws1
 assign [class="(?i)firefox"] $ws2
 assign [class="Thunar"] $ws3
 assign [class="Datagrip"] $ws4
 assign [class="TelegramDesktop"] $ws5
 
 # automatic set focus new window if it opens on another workspace then the current:
-for_window [class=Xfce4-terminal] focus
+for_window [class=kitty] focus
 for_window [class=(?i)firefox] focus
 for_window [class=Thunar] focus
 for_window [class=Datagrip] focus
