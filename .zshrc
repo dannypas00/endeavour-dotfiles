@@ -8,8 +8,7 @@ fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+ZSH=$HOME/.config/zsh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -71,7 +70,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=$ZSH/custom
-ZSH=$HOME/.config/zsh
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -81,12 +79,20 @@ ZSH=$HOME/.config/zsh
 plugins=(
     git
     dotenv
+    copyfile
+    dirhistory
+    docker-compose
+    docker
 )
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-export EDITOR='nvim'
-export ll='ls -lah'
+# Aliases are set in ~/.config/zsh/custom/aliases.sh
+# Any other aliases set might be overwritten because oh my zsh is annoying
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export EDITOR='nvim'
+alias ll='ls -lah'
+alias vim='nvim'
+

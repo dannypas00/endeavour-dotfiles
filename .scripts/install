@@ -2,8 +2,9 @@
 #############
 # Variables #
 #############
-PACKAGES="kitty maim xclip vim neovim"
+PACKAGES="kitty maim xclip vim neovim nodejs"
 PACKAGES_UNINSTALL_RECURSIVE="xfce4-terminal"
+COC_LANGUAGES="coc-json coc-tsserver coc-markdownlint coc-phpls coc-vetur coc-sql"
 
 #############
 # Execution #
@@ -18,3 +19,12 @@ yay -Rc $PACKAGES_UNINSTALL_RECURSIVE
 
 # Install oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
+# Install vim-plug
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+# Install plugins
+nvim --headless +PlugInstall +qall
+
+# Install CoC language servers
+nvim --headless +CocInstall $COC_LANGUAGES +qall
