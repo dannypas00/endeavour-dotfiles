@@ -93,6 +93,8 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export EDITOR='nvim'
+export PATH=$PATH:$HOME/.local/bin
+
 alias ll='ls -lah'
 alias vim='nvim'
 
