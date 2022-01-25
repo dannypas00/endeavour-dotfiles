@@ -1,0 +1,2 @@
+conf|config|file
+COC|COC_LANGUAGES|around
