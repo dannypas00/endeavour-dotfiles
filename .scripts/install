@@ -2,9 +2,10 @@
 #############
 # Variables #
 #############
-PACKAGES="kitty maim xclip vim neovim nodejs"
+PACKAGES="kitty maim xclip vim neovim nodejs zsh oh-my-zsh-git"
 PACKAGES_UNINSTALL_RECURSIVE="xfce4-terminal"
 COC_LANGUAGES="coc-json coc-tsserver coc-markdownlint coc-phpls coc-vetur coc-sql"
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 #############
 # Execution #
@@ -12,10 +13,9 @@ COC_LANGUAGES="coc-json coc-tsserver coc-markdownlint coc-phpls coc-vetur coc-sq
 # Reload font cache
 fc-cache -f -v &> /dev/null
 
-
 yay
-yay -S $PACKAGES
-yay -Rc $PACKAGES_UNINSTALL_RECURSIVE
+yay --noconfirm --nocleanmenu --nodiffmenu --noupgrademenu --noremovemake --redownloadall -q -S $PACKAGES
+yay --noconfirm --nocleanmenu --nodiffmenu --noupgrademenu --noremovemake --redownloadall -q -Rc $PACKAGES_UNINSTALL_RECURSIVE
 
 # Install oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
@@ -28,3 +28,17 @@ nvim --headless +PlugInstall +qall
 
 # Install CoC language servers
 nvim --headless +CocInstall $COC_LANGUAGES +qall
+
+##############
+# Copy files #
+##############
+cp -rf $SCRIPT_DIR/../.config $HOME/
+cp -rf $SCRIPT_DIR $HOME/
+cp -rf $SCRIPT_DIR/../.zshrc $HOME/
+cp -rf $SCRIPT_DIR/../.p10k.zsh $HOME/
+cp -rf $HOME/.oh-my-zsh $HOME/.config/zsh
+
+################
+# Set settings #
+################
+chsh -s `which zsh`
