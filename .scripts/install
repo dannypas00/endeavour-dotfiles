@@ -2,9 +2,9 @@
 #############
 # Variables #
 #############
-PACKAGES="kitty maim xclip vim neovim nodejs npm yarn docker docker-compose zsh oh-my-zsh-git"
+PACKAGES="kitty maim xclip vim neovim nodejs npm yarn docker docker-compose zsh oh-my-zsh-git inetutils iputils net-tools"
 PACKAGES_UNINSTALL_RECURSIVE="xfce4-terminal"
-COC_LANGUAGES="coc-json coc-tsserver coc-markdownlint coc-phpls coc-vetur coc-sql"
+COC_LANGUAGES="coc-json coc-tsserver coc-markdownlint coc-phpls coc-vetur coc-sql coc-docker coc-yaml"
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 #############
