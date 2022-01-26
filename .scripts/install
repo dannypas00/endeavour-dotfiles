@@ -2,7 +2,7 @@
 #############
 # Variables #
 #############
-PACKAGES="kitty maim xclip vim neovim nodejs zsh oh-my-zsh-git"
+PACKAGES="kitty maim xclip vim neovim nodejs npm yarn docker docker-compose zsh oh-my-zsh-git"
 PACKAGES_UNINSTALL_RECURSIVE="xfce4-terminal"
 COC_LANGUAGES="coc-json coc-tsserver coc-markdownlint coc-phpls coc-vetur coc-sql"
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
@@ -41,4 +41,5 @@ cp -rf $HOME/.oh-my-zsh $HOME/.config/zsh
 ################
 # Set settings #
 ################
-chsh -s `which zsh`
+chsh -s /usr/bin/zsh
+usermod -aG docker $USER
