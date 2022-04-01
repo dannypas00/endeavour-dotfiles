@@ -94,7 +94,7 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export EDITOR='nvim'
-export PATH=$PATH:$HOME/.local/bin:/home/dannypas00/.local/share/gem/ruby/3.0.0/bin
+export PATH=$PATH:$HOME/.local/bin:$HOME/.local/share/gem/ruby/3.0.0/bin
 export DOCKER_BUILDKIT=1
 
 alias ll='ls -lah'
