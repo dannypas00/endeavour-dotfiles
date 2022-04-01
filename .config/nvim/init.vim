@@ -15,5 +15,7 @@ aug i3config_ft_detection
     au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
 aug end
 
+autocmd BufReadPost * if @% !~# '\.git[\/\\]COMMIT_EDITMSG$' && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif 
+
 xmap <leader>f <Plug>(coc-format-selected)
 nmap <leader>f <Plug>(coc-format-selected)
