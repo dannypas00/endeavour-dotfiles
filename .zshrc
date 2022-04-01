@@ -83,6 +83,7 @@ plugins=(
     dirhistory
     docker-compose
     docker
+    zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -93,6 +94,11 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export EDITOR='nvim'
+export PATH=$PATH:$HOME/.local/bin:/home/dannypas00/.local/share/gem/ruby/3.0.0/bin
+export DOCKER_BUILDKIT=1
+
 alias ll='ls -lah'
 alias vim='nvim'
-
+alias o='composer'
+alias dbj='docker exec -it grutte-apier php artisan database-jobs:start && docker exec -it image-generator php artisan database-jobs:start'
+alias cdl='function _cdl(){ cd ${1}; ll };_cdl'
