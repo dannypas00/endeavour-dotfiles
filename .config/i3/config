@@ -287,6 +287,8 @@ bindsym $mod+e exec /usr/bin/thunar
 # Power Profiles menu switcher (rofi)
 bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
 
+bindsym XF86Calculator exec rofi -show calc -modi calc -no-show-match -no-sort -config ~/.config/rofi/colourscheme.rasi
+
 ##########################################
 # configuration for workspace behaviour: #
 ##########################################
@@ -429,6 +431,7 @@ exec --no-startup-id ~/.scripts/startup
 # set floating (nontiling)for apps needing it
 for_window [class="Yad" instance="yad"] floating enable
 for_window [class="Galculator" instance="galculator"] floating enable
+for_window [class="gnome-calculator"] floating enable
 for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
 
 # set floating (nontiling) for special apps
