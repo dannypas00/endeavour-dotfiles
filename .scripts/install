@@ -3,10 +3,10 @@ sudo echo 'Authorizing sudo for session'
 #############
 # Variables #
 #############
-PACKAGES="kitty maim xclip vim neovim nodejs zsh xss-lock php php-{gd,sodium,sqlite,redis,apache} composer docker docker-compose yarn npm inetutils iputils net-tools"
+PACKAGES="kitty maim xclip vim neovim nodejs zsh xss-lock php php-{gd,sodium,sqlite,redis,apache} composer"
 PACKAGES_AUR="oh-my-zsh-git"
 PACKAGES_UNINSTALL_RECURSIVE="xfce4-terminal"
-COC_LANGUAGES="coc-json coc-tsserver coc-markdownlint coc-phpls coc-vetur coc-sql coc-docker coc-yaml"
+COC_LANGUAGES="coc-json coc-tsserver coc-markdownlint coc-phpls coc-vetur coc-sql"
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 #############
@@ -45,5 +45,4 @@ cp -rf $HOME/.oh-my-zsh $HOME/.config/zsh
 ################
 # Set settings #
 ################
-chsh -s /usr/bin/zsh
-usermod -aG docker $USER
+chsh -s `which zsh`
