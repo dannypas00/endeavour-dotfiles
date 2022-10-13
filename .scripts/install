@@ -3,10 +3,14 @@ sudo echo 'Authorizing sudo for session'
 #############
 # Variables #
 #############
-PACKAGES="kitty maim xclip vim neovim nodejs zsh xss-lock php php-{gd,sodium,sqlite,redis,apache} composer"
-PACKAGES_AUR="oh-my-zsh-git"
+PACKAGES="kitty maim xclip vim neovim nodejs zsh xss-lock php php-{gd,sodium,sqlite,redis,apache} composer libqalculate"
+
+PACKAGES_AUR="oh-my-zsh-git rofi-calc"
+
 PACKAGES_UNINSTALL_RECURSIVE="xfce4-terminal"
+
 COC_LANGUAGES="coc-json coc-tsserver coc-markdownlint coc-phpls coc-vetur coc-sql"
+
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 #############
@@ -40,6 +44,7 @@ cp -rf $SCRIPT_DIR/../.config $HOME/
 cp -rf $SCRIPT_DIR $HOME/
 cp -rf $SCRIPT_DIR/../.zshrc $HOME/
 cp -rf $SCRIPT_DIR/../.p10k.zsh $HOME/
+cp -rf $SCRIPT_DIR/../.fonts $HOME/
 cp -rf $HOME/.oh-my-zsh $HOME/.config/zsh
 
 ################
