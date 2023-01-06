@@ -12,6 +12,9 @@ php-sodium
 php-sqlite
 php-redis
 php-apache
+php-intl
+php-mongodb
+php-imagick
 composer
 libqalculate
 docker
