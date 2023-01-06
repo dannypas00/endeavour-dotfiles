@@ -42,6 +42,15 @@ cp -rf $SCRIPT_DIR/../.p10k.zsh $HOME/
 cp -rf $SCRIPT_DIR/../.fonts $HOME/
 cp -rf $HOME/.oh-my-zsh $HOME/.config/zsh
 
+############################
+# Install Oh My Zsh things #
+############################
+# Powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.config/zsh/custom/themes/powerlevel10k
+
+# Zsh autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.config/zsh/custom/plugins/zsh-autosuggestions
+
 ################
 # Set settings #
 ################
