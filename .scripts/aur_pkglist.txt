@@ -1,0 +1,4 @@
+oh-my-zsh-git
+rofi-calc
+gitflow-avh
+zsh-theme-powerlevel10k-git
