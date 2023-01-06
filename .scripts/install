@@ -5,7 +5,7 @@ sudo echo 'Authorizing sudo for session'
 #############
 PACKAGES="kitty maim xclip vim neovim nodejs zsh xss-lock php php-{gd,sodium,sqlite,redis,apache} composer libqalculate"
 
-PACKAGES_AUR="oh-my-zsh-git rofi-calc"
+PACKAGES_AUR="oh-my-zsh-git rofi-calc gitflow-avh"
 
 PACKAGES_UNINSTALL_RECURSIVE="xfce4-terminal"
 
