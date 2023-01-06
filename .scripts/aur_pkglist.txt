@@ -2,3 +2,4 @@ oh-my-zsh-git
 rofi-calc
 gitflow-avh
 telegram-desktop
+php-pear
