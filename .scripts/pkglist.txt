@@ -1,0 +1,14 @@
+kitty
+maim
+xclip
+vim
+neovim
+nodejs
+zsh
+xss-lock
+php
+php-{gd,sodium,sqlite,redis,apache}
+composer
+libqalculate
+docker
+docker-compose
