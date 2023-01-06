@@ -7,7 +7,11 @@ nodejs
 zsh
 xss-lock
 php
-php-{gd,sodium,sqlite,redis,apache}
+php-gd
+php-sodium
+php-sqlite
+php-redis
+php-apache
 composer
 libqalculate
 docker
