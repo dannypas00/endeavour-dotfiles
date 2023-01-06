@@ -13,3 +13,4 @@ libqalculate
 docker
 docker-compose
 yay
+screen
