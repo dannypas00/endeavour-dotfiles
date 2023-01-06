@@ -14,7 +14,7 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 fc-cache -f -v &> /dev/null
 
 sudo pacman -Su
-sudo pacman -S --quiet --clean --noconfirm --needed $(comm -12 <(pacman -Slq | sort) <(sort $SCRIPT_DIR/pkglist.txt))
+sudo pacman -S --noconfirm --needed $(comm -12 <(pacman -Slq | sort) <(sort $SCRIPT_DIR/pkglist.txt))
 
 yay
 yay --noconfirm --nocleanmenu --nodiffmenu --noupgrademenu --noremovemake --redownloadall -S - < $SCRIPT_DIR/aur_pkglist.txt
