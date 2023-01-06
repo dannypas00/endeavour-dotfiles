@@ -3,10 +3,6 @@ sudo echo 'Authorizing sudo for session'
 #############
 # Variables #
 #############
-PACKAGES_AUR="oh-my-zsh-git rofi-calc gitflow-avh zsh-theme-powerlevel10k-git"
-
-PACKAGES_UNINSTALL_RECURSIVE="xfce4-terminal"
-
 COC_LANGUAGES="coc-json coc-tsserver coc-markdownlint coc-phpls coc-vetur coc-sql"
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
@@ -18,11 +14,11 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 fc-cache -f -v &> /dev/null
 
 sudo pacman -Su
-sudo pacman -S --quiet --clean --noconfirm --needed $(comm -12 <(pacman -Slq | sort) <(sort pkglist.txt))
+sudo pacman -S --quiet --clean --noconfirm --needed $(comm -12 <(pacman -Slq | sort) <(sort $SCRIPT_DIR/pkglist.txt))
 
 yay
-yay --noconfirm --nocleanmenu --nodiffmenu --noupgrademenu --noremovemake --redownloadall -q -S $PACKAGES_AUR
-yay --noconfirm --nocleanmenu --nodiffmenu --noupgrademenu --noremovemake --redownloadall -q -Rc $PACKAGES_UNINSTALL_RECURSIVE
+yay --noconfirm --nocleanmenu --nodiffmenu --noupgrademenu --noremovemake --redownloadall -S - < $SCRIPT_DIR/aur_pkglist.txt
+yay --noconfirm --nocleanmenu --nodiffmenu --noupgrademenu --noremovemake --redownloadall -Rc xfce4-terminal
 
 # Install oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
