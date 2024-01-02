@@ -17,9 +17,12 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+source $ZSH_CUSTOM/keybinds.sh
+source /usr/share/nvm/init-nvm.sh
 
 # Aliases are set in ~/.config/zsh/custom/aliases.sh
 # Any other aliases set might be overwritten because oh my zsh is annoying
+source $ZSH_CUSTOM/aliases.sh
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
