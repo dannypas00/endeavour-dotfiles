@@ -26,3 +26,8 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR='nvim'
 export PATH=$PATH:$HOME/.local/bin:$HOME/.local/share/gem/ruby/3.0.0/bin
 export DOCKER_BUILDKIT=1
+export DOCKER_BUILDKIT=1
+export XDEBUG_MODE=coverage
+export CLOUDSDK_PYTHON_SITEPACKAGES=1
+export K6_BROWSER_ENABLED=true
+export BROWSER=google-chrome-stable
