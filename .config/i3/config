@@ -281,7 +281,7 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+p exec /usr/local/bin/switch-audio-port
 
 ## App shortcuts
-bindsym $mod+Shift+Return exec /usr/bin/firefox
+bindsym $mod+Shift+Return exec google-chrome-stable
 bindsym $mod+e exec /usr/bin/thunar
 
 # Power Profiles menu switcher (rofi)
@@ -295,12 +295,12 @@ bindsym XF86Calculator exec rofi -show calc -modi calc -no-show-match -no-sort -
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1:"
-set $ws2 "2:"
-set $ws3 "3:"
-set $ws4 "4:"
-set $ws5 "5:"
-set $ws6 "6:"
+set $ws1 "1: "
+set $ws2 "2: "
+set $ws3 "3: "
+set $ws4 "4: "
+set $ws5 "5: "
+set $ws6 "6: "
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
@@ -445,63 +445,114 @@ for_window [window_role="About"] floating enable
 for_window [class="org-languagetool-openoffice-Main"] floating enable
 for_window [class="libreoffice-startcenter"] floating enable
 
+#######
+#THEME#
+#######
+
+# set primary gruvbox colorscheme colors
+set $bg #282828
+set $red #cc241d
+set $green #98971a
+set $yellow #d79921
+set $blue #458588
+set $purple #b16286
+set $aqua #689d68
+set $gray #a89984
+set $darkgray #1d2021
+
+# font used by i3 for titles and bars
+font pango:Hack 8
+
+#start of bar section
+bar {
+    position bottom
+    status_command i3blocks -c ~/.config/i3/i3blocks.conf
+    colors {
+        # bar background color
+        background $bg
+        # text color used for blocks that do not have a color specified.
+        statusline $yellow
+        # workspaces section            
+        #                    border  backgr. text
+        focused_workspace    $aqua $aqua $darkgray
+        inactive_workspace   $darkgray $darkgray $yellow
+        active_workspace     $darkgray $darkgray $yellow
+        urgent_workspace     $red $red $bg
+    }
+}
+#end of bar section
+
+#start of window title bars & borders section
+
+# green gruvbox
+# class                 border|backgr|text|indicator|child_border
+#client.focused          $green $green $darkgray $purple $darkgray
+#client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
+#client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
+#client.urgent           $red $red $white $red $red
+
+# blue gruvbox
+# class                 border|backgr|text|indicator|child_border
+client.focused          $blue $blue $darkgray $purple $darkgray
+client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
+client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
+client.urgent           $red $red $white $red $red
+
+#end of window title bars & borders section
+
 ######################################
 # color settings for bar and windows #
 ######################################
 
 # Define colors variables:
-set $darkbluetrans	#08052be6
-set $darkblue		#08052b
-set $lightblue		#5294e2
-set $urgentred		#e53935
-set $white		#ffffff
-set $black		#000000
-set $purple		#e345ff
-set $darkgrey		#383c4a
-set $grey		#b0b5bd
-set $mediumgrey		#8b8b8b
-set $yellowbrown	#e1b700
+#set $darkbluetrans	#08052be6
+#set $darkblue		#08052b
+#set $lightblue		#5294e2
+#set $urgentred		#e53935
+#set $white		#ffffff
+#set $black		#000000
+#set $purple		#e345ff
+#set $darkgrey		#383c4a
+#set $grey		#b0b5bd
+#set $mediumgrey		#8b8b8b
+#set $yellowbrown	#e1b700
 
 # define colors for windows:
 #class		        	border		bground		text		indicator	child_border
-client.focused		    $lightblue	$darkblue	$white		$purple		$urgentred
-client.unfocused	    $darkblue	$darkblue	$grey		$purple		$darkgrey
-client.focused_inactive	$darkblue	$darkblue	$grey		$purple		$black
-client.urgent		    $urgentred	$urgentred	$white		$purple		$yellowbrown
+#client.focused		    $lightblue	$darkblue	$white		$purple		$urgentred
+#client.unfocused	    $darkblue	$darkblue	$grey		$purple		$darkgrey
+#client.focused_inactive	$darkblue	$darkblue	$grey		$purple		$black
+#client.urgent		    $urgentred	$urgentred	$white		$purple		$yellowbrown
 
 ############################################
 # bar settings (input comes from i3blocks) #
 ############################################
 
+#exec_always --no-startup-id ~/.config/polybar/launch.sh
+
 # Start i3bar to display a workspace bar
 # (plus the system information i3status finds out, if available)
-bar {
-		font pango:Noto Sans Regular 10, FontAwesome 10
-		status_command i3blocks -c ~/.config/i3/i3blocks.conf
-	    	position bottom
-#	    	i3bar_command i3bar --transparency
-# it could be that you have no primary display set: set one (xrandr --output <output> --primary)
-# reference: https://i3wm.org/docs/userguide.html#_tray_output
-		    tray_output primary
-		    tray_padding 0
+#bar {
+#	font pango:Noto Sans Regular 10, FontAwesome 10
+#	status_command i3blocks -c ~/.config/i3/i3blocks.conf
+#    	position bottom
+#    	i3bar_command i3bar --transparency
+#	tray_output primary
+#	tray_padding 0
+#	strip_workspace_numbers yes
+#	colors {
+#		separator          $purple
+#		background         $darkgrey
+#	    	statusline         $white
+##              	           		border 		        bg		txt		indicator
+#		focused_workspace	$mediumgrey	   	$grey		$darkgrey	$purple
+#		active_workspace	$lightblue      	$mediumgrey	$darkgrey	$purple
+#		inactive_workspace	$darkgrey   		$darkgrey	$grey		$purple
+#		urgent_workspace	$urgentred	    	$urgentred	$white		$purple
+#	}
+#}
 
-# When strip_workspace_numbers is set to yes,
-# any workspace that has a name of the form
-# “[n][:][NAME]” will display only the name.
-strip_workspace_numbers yes
-##strip_workspace_name no
 
-		    colors {
-		    separator          $purple
-		    background         $darkgrey
-		    statusline         $white
-#                          		border 		        bg		txt		indicator
-		focused_workspace	$mediumgrey	   	$grey		$darkgrey	$purple
-		active_workspace	$lightblue      	$mediumgrey	$darkgrey	$purple
-		inactive_workspace	$darkgrey   		$darkgrey	$grey		$purple
-		urgent_workspace	$urgentred	    	$urgentred	$white		$purple
-	}
-}
 
 # you can add different bars for multidisplay setups on each display:
 # set output HDMI-0 to the display you want the bar, --transparency can be set.
