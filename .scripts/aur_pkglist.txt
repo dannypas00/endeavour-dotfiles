@@ -3,3 +3,4 @@ rofi-calc
 gitflow-avh
 telegram-desktop
 php-pear
+google-chrome
