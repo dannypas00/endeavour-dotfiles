@@ -1,0 +1,17 @@
+<keymap version="1" name="GNOME copy" parent="Default for GNOME">
+  <action id="ForceCompletionAction" />
+  <action id="Git.Fetch">
+    <keyboard-shortcut first-keystroke="ctrl alt f" />
+  </action>
+  <action id="Git.New.Branch.In.Log" />
+  <action id="GitNewBranchAction" />
+  <action id="HippieCompletion" />
+  <action id="Inline" />
+  <action id="IntroduceField" />
+  <action id="MainMenuButton.ShowMenu" />
+  <action id="ShowFilterPopup" />
+  <action id="TabPressedAction">
+    <keyboard-shortcut first-keystroke="alt slash" />
+  </action>
+  <action id="UsageGrouping.FileStructure" />
+</keymap>

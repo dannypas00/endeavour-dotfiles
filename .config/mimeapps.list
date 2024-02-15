@@ -1,14 +1,19 @@
 [Default Applications]
-x-scheme-handler/tg=userapp-Telegram Desktop-7JESG1.desktop
+x-scheme-handler/tg=org.telegram.desktop.desktop
 x-scheme-handler/jetbrains=jetbrains-toolbox.desktop
 x-scheme-handler/msteams=teams.desktop
 x-scheme-handler/discord-409416265891971072=discord-409416265891971072.desktop
 x-scheme-handler/postman=Postman.desktop
+x-scheme-handler/fleet=jetbrains-fleet.desktop
+text/plain=xed.desktop
+x-scheme-handler/figma=figma-linux.desktop
 
 [Added Associations]
-x-scheme-handler/tg=userapp-Telegram Desktop-N854F1.desktop;userapp-Telegram Desktop-7JESG1.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-N854F1.desktop;userapp-Telegram Desktop-7JESG1.desktop;org.telegram.desktop.desktop;
 image/png=gimp.desktop;org.gnome.gThumb.desktop;
 application/pdf=okularApplication_pdf.desktop;libreoffice-draw.desktop;
 application/x-ms-dos-executable=wine.desktop;
 image/jpeg=org.gnome.gThumb.desktop;
 application/gml+xml=xed.desktop;
+text/csv=xed.desktop;
+text/plain=xed.desktop;

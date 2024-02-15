@@ -120,16 +120,16 @@ bindcode $mod+Shift+Mod2+81 	move container to workspace  $ws9
 bindcode $mod+Shift+Mod2+90 	move container to workspace  $ws10
 
 # move focused container to workspace with numpad keys
-bindcode $mod+Shift+87 	move container to workspace  $ws1
-bindcode $mod+Shift+88 	move container to workspace  $ws2
-bindcode $mod+Shift+89 	move container to workspace  $ws3
-bindcode $mod+Shift+83 	move container to workspace  $ws4
-bindcode $mod+Shift+84 	move container to workspace  $ws5
-bindcode $mod+Shift+85 	move container to workspace  $ws6
-bindcode $mod+Shift+79 	move container to workspace  $ws7
-bindcode $mod+Shift+80 	move container to workspace  $ws8
-bindcode $mod+Shift+81 	move container to workspace  $ws9
-bindcode $mod+Shift+90 	move container to workspace  $ws10
+bindcode $mod+Shift+87 	 move container to workspace  $ws1
+bindcode $mod+Shift+88 	 move container to workspace  $ws2
+bindcode $mod+Shift+89 	 move container to workspace  $ws3
+bindcode $mod+Shift+83 	 move container to workspace  $ws4
+bindcode $mod+Shift+84 	 move container to workspace  $ws5
+bindcode $mod+Shift+85 	 move container to workspace  $ws6
+bindcode $mod+Shift+79 	 move container to workspace  $ws7
+bindcode $mod+Shift+80 	 move container to workspace  $ws8
+bindcode $mod+Shift+81 	 move container to workspace  $ws9
+bindcode $mod+Shift+90 	 move container to workspace  $ws10
 
 # resize window (you can also use the mouse for that):
 mode "resize" {
@@ -518,11 +518,11 @@ client.urgent           $red $red $white $red $red
 #set $yellowbrown	#e1b700
 
 # define colors for windows:
-#class		       	border		bground		text		indicator	child_border
-#client.focused		   $lightblue	$darkblue	$white		$purple		$urgentred
-#client.unfocused	   $darkblue	$darkblue	$grey		$purple		$darkgrey
+#class		        	border		bground		text		indicator	child_border
+#client.focused		    $lightblue	$darkblue	$white		$purple		$urgentred
+#client.unfocused	    $darkblue	$darkblue	$grey		$purple		$darkgrey
 #client.focused_inactive	$darkblue	$darkblue	$grey		$purple		$black
-#client.urgent		   $urgentred	$urgentred	$white		$purple		$yellowbrown
+#client.urgent		    $urgentred	$urgentred	$white		$purple		$yellowbrown
 
 ############################################
 # bar settings (input comes from i3blocks) #
@@ -543,12 +543,12 @@ client.urgent           $red $red $white $red $red
 #	colors {
 #		separator          $purple
 #		background         $darkgrey
-#	   	statusline         $white
-##              	          		border 		       bg		txt		indicator
-#		focused_workspace	$mediumgrey	  	$grey		$darkgrey	$purple
+#	    	statusline         $white
+##              	           		border 		        bg		txt		indicator
+#		focused_workspace	$mediumgrey	   	$grey		$darkgrey	$purple
 #		active_workspace	$lightblue      	$mediumgrey	$darkgrey	$purple
 #		inactive_workspace	$darkgrey   		$darkgrey	$grey		$purple
-#		urgent_workspace	$urgentred	   	$urgentred	$white		$purple
+#		urgent_workspace	$urgentred	    	$urgentred	$white		$purple
 #	}
 #}
 
