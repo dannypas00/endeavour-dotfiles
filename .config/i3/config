@@ -177,7 +177,8 @@ bindsym $mod+Shift+q kill
 
 # exit-menu
 # bindsym $mod+Shift+e exec ~/.config/i3/scripts/powermenu
-bindsym $mod+Shift+e exec ~/.config/rofi/applets/bin/powermenu.sh
+# bindsym $mod+Shift+e exec ~/.config/rofi/applets/bin/powermenu.sh
+bindsym $mod+Shift+e exec ~/.config/rofi/powermenu/type-4/powermenu.sh
 
 # Lock the system
 # lock with a picture:
@@ -450,7 +451,7 @@ for_window [class="libreoffice-startcenter"] floating enable
 #######
 
 # set primary gruvbox colorscheme colors
-set $bg #282828
+#set $bg #282828
 set $red #cc241d
 set $green #98971a
 set $yellow #d79921
@@ -459,6 +460,9 @@ set $purple #b16286
 set $aqua #689d68
 set $gray #a89984
 set $darkgray #1d2021
+
+set_from_resource $fg i3wm.color7
+set_from_resource $bg i3wm.color2
 
 # font used by i3 for titles and bars
 font pango:Hack 8
@@ -470,8 +474,9 @@ bar {
     colors {
         # bar background color
         background $bg
-        # text color used for blocks that do not have a color specified.
-        statusline $yellow
+        statusline $fg
+        separator $fg
+
         # workspaces section            
         #                    border  backgr. text
         focused_workspace    $aqua $aqua $darkgray
@@ -493,10 +498,19 @@ bar {
 
 # blue gruvbox
 # class                 border|backgr|text|indicator|child_border
-client.focused          $blue $blue $darkgray $purple $darkgray
-client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
-client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
-client.urgent           $red $red $white $red $red
+#client.focused          $blue $blue $darkgray $purple $darkgray
+#client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
+#client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
+#client.urgent           $red $red $white $red $red
+
+# class                 border  backgr. text indicator child_border
+client.focused          $bg     $bg     $fg  $bg       $bg
+client.focused_inactive $bg     $bg     $fg  $bg       $bg
+client.unfocused        $bg     $bg     $fg  $bg       $bg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
+
+client.background       $bg
 
 #end of window title bars & borders section
 
@@ -595,7 +609,7 @@ client.urgent           $red $red $white $red $red
 		#-config ~/.config/rofi/colourscheme.rasi
 		#-config ~/.config/rofi/rofidmenu.rasi
 
-bindsym $mod+space exec ~/.config/rofi/launchers/type-7/launcher.sh
+bindsym $mod+space exec ~/.config/rofi/launchers/type-6/launcher.sh
 
 # bindsym F9 exec rofi -modi drun -show drun \
 #		-config ~/.config/rofi/rofidmenu.rasi
