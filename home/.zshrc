@@ -33,3 +33,4 @@ export XDEBUG_MODE=coverage
 export CLOUDSDK_PYTHON_SITEPACKAGES=1
 export K6_BROWSER_ENABLED=true
 export BROWSER=google-chrome-stable
+source /usr/share/nvm/init-nvm.sh

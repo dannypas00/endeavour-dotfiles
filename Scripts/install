@@ -52,6 +52,18 @@ git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.config/zsh/cus
 #############################
 wal -i $HOME/.config/i3/wallpapers/village-wallpaper.jpg
 
+############################
+# Add user to docker group #
+############################
+sudo usermod -aG docker $USER
+sudo systemctl enable --now docker
+
+######################
+# Install nodejs lts #
+######################
+source /usr/share/nvm/init-nvm.sh
+nvm install --lts
+
 ################
 # Set settings #
 ################
