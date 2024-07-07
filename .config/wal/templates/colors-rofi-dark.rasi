@@ -1,0 +1,12 @@
+* {{
+    background: {background};
+    background-alt: {color2};
+    foreground: {foreground};
+    selected: {color2};
+    active: {color1};
+    urgent: {color3};
+}}
+
+imagebox {{
+    background-image: url("{wallpaper}", height);
+}}
