@@ -21,3 +21,5 @@ docker
 docker-compose
 yay
 screen
+python-pywal
+walogram-git
