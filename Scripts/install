@@ -35,11 +35,7 @@ nvim --headless +CocInstall $COC_LANGUAGES +qall
 ##############
 # Copy files #
 ##############
-cp -rf $SCRIPT_DIR/../.config $HOME/
-cp -rf $SCRIPT_DIR $HOME/
-cp -rf $SCRIPT_DIR/../.zshrc $HOME/
-cp -rf $SCRIPT_DIR/../.p10k.zsh $HOME/
-cp -rf $SCRIPT_DIR/../.fonts $HOME/
+cp -rf $SCRIPT_DIR/../home/* $HOME/
 cp -rf $HOME/.oh-my-zsh $HOME/.config/zsh
 
 ############################
