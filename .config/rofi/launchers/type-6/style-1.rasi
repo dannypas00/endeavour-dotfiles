@@ -207,3 +207,5 @@ error-message {
     background-color:            @background;
     text-color:                  @foreground;
 }
+
+@import "~/.cache/wal/colors-rofi-dark"

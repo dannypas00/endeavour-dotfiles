@@ -1,0 +1,15 @@
+*
+!.gitignore
+!coc
+!dunst
+!i3
+!kitty
+!nvim
+!rofi
+!zsh
+!EOS-greeter.conf
+!EOS-initial-wallpaper.I3
+!mimeapps.list
+!picom.conf
+!user-dirs.dirs
+!user-dirs.locale
