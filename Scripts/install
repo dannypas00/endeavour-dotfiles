@@ -51,6 +51,11 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.config/z
 # Zsh autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.config/zsh/custom/plugins/zsh-autosuggestions
 
+#############################
+# Set wallpaper and colours #
+#############################
+wal -i $HOME/.config/i3/wallpapers/village-wallpaper.jpg
+
 ################
 # Set settings #
 ################
