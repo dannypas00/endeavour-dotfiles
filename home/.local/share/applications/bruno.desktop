@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=Bruno
+Comment=Opensource IDE For Exploring and Testing Api's
+Exec=bruno.AppImage
+Icon=bruno
+Terminal=False

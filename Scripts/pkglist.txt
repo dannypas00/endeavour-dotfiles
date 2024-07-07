@@ -23,3 +23,4 @@ yay
 screen
 python-pywal
 walogram-git
+telegram-desktop
