@@ -64,6 +64,11 @@ sudo systemctl enable --now docker
 source /usr/share/nvm/init-nvm.sh
 nvm install --lts
 
+##################
+# Download files #
+##################
+curl -o $HOME/.local/bin/bruno.AppImage https://github.com/usebruno/bruno/releases/download/v1.20.2/bruno_1.20.2_x86_64_linux.AppImage
+
 ################
 # Set settings #
 ################
