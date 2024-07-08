@@ -71,6 +71,19 @@ bindsym $mod+8    workspace  $ws8
 bindsym $mod+9    workspace  $ws9
 bindsym $mod+0    workspace  $ws10
 
+bindsym $mod+F1    workspace  $wsF1
+bindsym $mod+F2    workspace  $wsF2
+bindsym $mod+F3    workspace  $wsF3
+bindsym $mod+F4    workspace  $wsF4
+bindsym $mod+F5    workspace  $wsF5
+bindsym $mod+F6    workspace  $wsF6
+bindsym $mod+F7    workspace  $wsF7
+bindsym $mod+F8    workspace  $wsF8
+bindsym $mod+F9    workspace  $wsF9
+bindsym $mod+F10   workspace  $wsF10
+bindsym $mod+F11   workspace  $wsF10
+bindsym $mod+F12   workspace  $wsF10
+
 # switch to workspace with numpad keys
 bindcode $mod+87 workspace 1
 bindcode $mod+88 workspace 2
@@ -106,6 +119,19 @@ bindsym $mod+Shift+7    move container to workspace  $ws7
 bindsym $mod+Shift+8    move container to workspace  $ws8
 bindsym $mod+Shift+9    move container to workspace  $ws9
 bindsym $mod+Shift+0    move container to workspace  $ws10
+
+bindsym $mod+Shift+F1   move container to workspace  $wsF1
+bindsym $mod+Shift+F2   move container to workspace  $wsF2
+bindsym $mod+Shift+F3   move container to workspace  $wsF3
+bindsym $mod+Shift+F4   move container to workspace  $wsF4
+bindsym $mod+Shift+F5   move container to workspace  $wsF5
+bindsym $mod+Shift+F6   move container to workspace  $wsF6
+bindsym $mod+Shift+F7   move container to workspace  $wsF7
+bindsym $mod+Shift+F8   move container to workspace  $wsF8
+bindsym $mod+Shift+F9   move container to workspace  $wsF9
+bindsym $mod+Shift+F10  move container to workspace  $wsF10
+bindsym $mod+Shift+F11  move container to workspace  $wsF11
+bindsym $mod+Shift+F12  move container to workspace  $wsF12
 
 # move focused container to workspace with numpad keys
 bindcode $mod+Shift+Mod2+87 	move container to workspace  $ws1
@@ -177,8 +203,7 @@ bindsym $mod+Shift+q kill
 
 # exit-menu
 # bindsym $mod+Shift+e exec ~/.config/i3/scripts/powermenu
-# bindsym $mod+Shift+e exec ~/.config/rofi/applets/bin/powermenu.sh
-bindsym $mod+Shift+e exec ~/.config/rofi/powermenu/type-4/powermenu.sh
+bindsym $mod+Shift+e exec ~/.config/rofi/applets/bin/powermenu.sh
 
 # Lock the system
 # lock with a picture:
@@ -194,7 +219,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # keybinding in fancy rofi (automated):
-bindsym $mod+F1 exec ~/.config/i3/scripts/keyhint-2
+# bindsym $mod+F1 exec ~/.config/i3/scripts/keyhint-2
 
 # Backlight control
 bindsym XF86MonBrightnessUp exec xbacklight +10
@@ -288,7 +313,7 @@ bindsym $mod+e exec /usr/bin/thunar
 # Power Profiles menu switcher (rofi)
 bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
 
-bindsym XF86Calculator exec rofi -show calc -modi calc -no-show-match -no-sort -config ~/.config/rofi/colourscheme.rasi
+bindsym XF86Launch5 exec rofi -show calc -modi calc -no-show-match -no-sort -config ~/.config/rofi/colourscheme.rasi
 
 ##########################################
 # configuration for workspace behaviour: #
@@ -297,7 +322,7 @@ bindsym XF86Calculator exec rofi -show calc -modi calc -no-show-match -no-sort -
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1: "
-set $ws2 "2: "
+set $ws2 "2: "
 set $ws3 "3: "
 set $ws4 "4: "
 set $ws5 "5: "
@@ -307,6 +332,19 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+set $wsF1 "F1"
+set $wsF2 "F2"
+set $wsF3 "F3"
+set $wsF4 "F4"
+set $wsF5 "F5"
+set $wsF6 "F6"
+set $wsF7 "F7"
+set $wsF8 "F8"
+set $wsF9 "F9"
+set $wsF10 "F10"
+set $wsF11 "F10"
+set $wsF12 "F10"
+
 # use workspaces on different displays:
 # where you have to replace VGA-0/HDMI-0 with the names for your displays
 # you can get from xrandr command
@@ -314,15 +352,22 @@ set $ws10 "10"
 #workspace $ws2 output VGA-0
 #workspace $ws3 output HDMI-0
 #workspace $ws4 output HDMI-0
-#workspace $ws5 output HDMI-0
+#workspace $ws5 output HDMI-1
+#workspace $ws6 output DP-1
 
 # bind program to workspace and focus to them on startup:
 #assign [class="kitty"] $ws1
-#assign [class="(?i)firefox"] $ws2
+#assign [class="google-chrome"] $ws2
 #assign [class="Thunar"] $ws3
-assign [class="jetbrains-datagrip"] $ws4
-assign [class="TelegramDesktop"] $ws5
+#assign [class="jetbrains-datagrip"] $ws4
+#assign [class="TelegramDesktop"] $ws5
 #assign [class="jetbrains-phpstorm"] $ws6
+
+# Startup apps
+#exec --no-startup-id i3-msg "workspace $ws1; move workspace to output DP-1; exec --no-startup-id sh -c 'sleep 2; exec kitty'"
+#exec --no-startup-id i3-msg "workspace $ws5; move workspace to output HDMI-1; exec --no-startup-id sh -c 'sleep 2; exec telegram-desktop'"
+#exec --no-startup-id i3-msg "workspace $ws6; move workspace to output DP-1; exec --no-startup-id sh -c 'sleep 2; exec phpstorm'"
+#exec --no-startup-id i3-msg "workspace $ws2; move workspace to output HDMI-1; exec --no-startup-id sh -c 'sleep 2; exec google-chrome-stable'"
 
 # automatic set focus new window if it opens on another workspace then the current:
 #for_window [class=kitty] focus
@@ -368,7 +413,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id dex --autostart --environment i3
 
 # start welcome app
-#exec --no-startup-id sh /usr/share/endeavouros/scripts/welcome --startdelay=3 
+#exec --no-startup-id sh /usr/share/endeavouros/scripts/welcome --startdelay=3
 
 # num lock activated
 exec --no-startup-id numlockx on
@@ -452,7 +497,7 @@ for_window [class="libreoffice-startcenter"] floating enable
 #######
 
 # set primary gruvbox colorscheme colors
-#set $bg #282828
+set $bg #282828
 set $red #cc241d
 set $green #98971a
 set $yellow #d79921
@@ -478,7 +523,7 @@ bar {
         statusline $fg
         separator $fg
 
-        # workspaces section            
+        # workspaces section
         #                    border  backgr. text
         focused_workspace    $aqua $aqua $darkgray
         inactive_workspace   $darkgray $darkgray $yellow
